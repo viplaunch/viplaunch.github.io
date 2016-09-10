@@ -1,0 +1,1083 @@
+/*!
+ * SlickNav Responsive Mobile Menu v1.0.3
+ * (c) 2015 Josh Cope
+ * licensed under MIT
+ */
+
+/* CSS Document */
+
+/*
+	Theme Name: Margo
+	Description: Margo - Responsive Template
+	Version: 1.0
+	Author: iThemesLab
+	Website: http://ithemeslab.com
+*/
+
+/* ------------------------------------------ */
+
+/*             TABLE OF CONTENTS
+/* ------------------------------------------ */
+
+/*   01 - General & Basic Styles   */
+
+/*   02 - Header & Navigation      */
+
+/*   03 - Slider                   */
+
+/*   04 - Main Page Elements       */
+
+/*   05 - Revolution Slider        */
+
+/*   06 - Shortcodes Elements      */
+
+/*   07 - Portfolio Styles         */
+
+/*   08 - Single Project Styles    */
+
+/*   09 - Blog Styles              */
+
+/*   10 - Single post Styles       */
+
+/*   11 - Sidebar Styles           */
+
+/*   12 - Footer Styles 		   */
+
+/*   13 - Plugins Styles 	  	   */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
+
+/*------------------------------------------*/
+
+/*	     01 - General & Basic Styles
+/*------------------------------------------*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #515151;
+  /* background: url(../images/patterns/1.png) fixed repeat; */
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #444;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+i {
+  font-size: 1.1em;
+}
+
+h2,
+h4,
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  color: #444;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+h5 {
+  font-size: 13px;
+  line-height: 21px;
+  padding: 2px;
+}
+
+p {
+  color: #515151;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 16px;
+  margin: 0;
+}
+
+p strong {
+  font-weight: 600;
+}
+
+.page-content p {
+  margin-bottom: 15px;
+}
+
+#content {
+  padding: 40px 0;
+}
+
+#container {
+  background-color: #fff;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 99999999999;
+}
+
+.spinner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  -webkit-animation: rotatee 2.0s infinite linear;
+  animation: rotatee 2.0s infinite linear;
+}
+
+.dot1,
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  border-radius: 100%;
+  -webkit-animation: bouncee 2.0s infinite ease-in-out;
+  animation: bouncee 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotatee {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatee {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes bouncee {
+  0%, 100% {
+    -webkit-transform: scale(0.0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes bouncee {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+
+  50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/*------------------------------------------*/
+
+/*	     02 - Header & Navigation
+/*------------------------------------------*/
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.top-bar {
+  background-color: #fff;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.top-bar a {
+  color: #666;
+}
+
+.top-bar .contact-details li {
+  display: inline-block;
+}
+
+.top-bar .contact-details li a:before {
+  position: relative;
+  content: "|";
+  font-size: 13px;
+  margin: 0 3px;
+  top: -1px;
+  color: #ddd;
+}
+
+.top-bar .contact-details li a:before {
+  color: #666;
+}
+
+.top-bar .contact-details li:first-child a:before {
+  display: none;
+}
+
+.top-bar .contact-details li a {
+  font-size: 12px;
+  display: block;
+  line-height: 32px;
+}
+
+.top-bar .contact-details li a:visited {
+  text-decoration: none;
+}
+
+.top-bar .language-list {
+  float: right;
+}
+
+.top-bar .language-list li {
+  display: inline-block;
+  float: left;
+}
+
+.top-bar .language-list li a:before {
+  position: relative;
+  content: "|";
+  font-size: 13px;
+  margin: 0 3px;
+  top: -1px;
+  color: #ddd;
+}
+
+.top-bar .language-list li a:before {
+  color: #666;
+}
+
+.top-bar .language-list li:first-child a:before {
+  display: none;
+}
+
+.top-bar .language-list li a {
+  font-size: 12px;
+  display: block;
+  line-height: 32px;
+}
+
+.top-bar .language-list li a.active {
+  color: #0bb586;
+}
+
+.top-bar .language-list li a:visited {
+  text-decoration: none;
+}
+
+.wpb-mobile-menu {
+  display: none;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.navbar-brand {
+  position: relative;
+  padding: 27px 0;
+  margin: 0!important;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.navbar-default .navbar-nav {
+  margin-right: 10px!important;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.navbar-default .navbar-nav > li {
+  margin-left: 6px;
+}
+
+.navbar-default .navbar-nav > li:first-child {
+  margin-left: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #1e1e1e;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 28px 15px 28px 15px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-weight: 400;
+}
+
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > li:hover > a {
+  border-bottom: 2px solid;
+}
+
+.navbar-default .navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  left: 50%;
+  display: block;
+  height: 5px;
+  width: 5px;
+  opacity: 0;
+  margin: 0 0 -3px -2px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.navbar-default .navbar-nav > li > a.active:after {
+  opacity: 1;
+}
+
+/*================================================== 
+     Slideshow
+ ================================================== */
+
+/*-- Main slide --*/
+
+/*-- Animation --*/
+
+/*------------------------------------------*/
+
+/*	   03 - Main Page Elements
+/*------------------------------------------*/
+
+.page-banner {
+  padding: 30px 0;
+  background: url(../images/patterns/farmer.png) center;
+  border-bottom: 1px solid #eee;
+}
+
+.page-banner h2 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+ul.breadcrumbs {
+  float: right;
+  margin-top: 15px;
+}
+
+.no-subtitle ul.breadcrumbs {
+  margin-top: 4px;
+}
+
+ul.breadcrumbs li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  margin-left: 3px;
+  color: #1e1e1e;
+  float: left;
+}
+
+ul.breadcrumbs li:before {
+  content: '/';
+  margin: 0 4px 0 2px;
+  color: #bbb;
+}
+
+ul.breadcrumbs li:first-child {
+  margin: 0;
+}
+
+ul.breadcrumbs li:first-child:before {
+  content: '';
+  margin: 0;
+}
+
+/*------------------------------------------*/
+
+/*	     05 - Shortcodes Elements
+/*------------------------------------------*/
+
+/*************** Dividers ***************/
+
+.hr5 {
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+}
+
+/*************** Clients Carousel ***************/
+
+/*************** Call To Action ***************/
+
+/*************** Custom Carousel ***************/
+
+/*************** Latest News ***************/
+
+.latest-posts-classic .post-row {
+  margin-bottom: 10px;
+}
+
+.latest-posts-classic .left-meta-post {
+  float: left;
+  text-align: center;
+  margin-right: 12px;
+  margin-bottom: 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  overflow: hidden;
+}
+
+.latest-posts-classic .left-meta-post .post-date {
+  padding: 2px 0;
+  width: 60px;
+  background-color: #aeaeae;
+  color: #fff;
+}
+
+.latest-posts-classic .left-meta-post .post-date .day {
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.latest-posts-classic .post-title {
+  margin-bottom: 5px;
+}
+
+.latest-posts-classic .post-title a {
+  color: #444;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+/*************** Toggles & Accordion ***************/
+
+/*************** Dropcaps ***************/
+
+/*************** Milestone ***************/
+
+/*************** Pricing Tables ***************/
+
+/*************** Buttons ***************/
+
+/*************** Alerts ***************/
+
+/*************** Pie Charts ***************/
+
+/*************** Lists ***************/
+
+/*************** Tabs ***************/
+
+/*************** Icons ***************/
+
+/*First Icon Effect */
+
+/*Seconed Icon Effect */
+
+/*Third Icon Effect */
+
+/*Fourth Icon Effect */
+
+/*Fifth Icon Effect */
+
+/*six Icon Effect */
+
+/*************** Service Box ***************/
+
+/*************** Testimonials ***************/
+
+/*.testimonials:after {
+	font-family: "FontAwesome";
+	content: '\f0e5';
+	font-size: 6em;
+	line-height: 70px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -32px;
+	color: rgba(255,255,255,.06);
+}*/
+
+/*************** Team Members ***************/
+
+/*************** Heading Titles ***************/
+
+.classic-title {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  font-weight: 300;
+}
+
+.classic-title span {
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
+  font-weight: 400;
+}
+
+/*------------------------------------------*/
+
+/*	        06 - Portfolio Styles
+/*------------------------------------------*/
+
+/*---- Isotope filtering ----*/
+
+/* Start Campaign Section
+==================================================================
+*/
+
+/*------------------------------------------*/
+
+/*		  07 - Single Project Styles
+/*------------------------------------------*/
+
+/*------------------------------------------*/
+
+/*			   08 - Blog Styles
+/*------------------------------------------*/
+
+/*Pagination*/
+
+/*------------------------------------------*/
+
+/*		    09 - Single post Styles
+/*------------------------------------------*/
+
+/*------------------------------------------*/
+
+/*			10 - SideBar Styles
+/*------------------------------------------*/
+
+.sidebar {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  color: #515151;
+}
+
+.sidebar .widget {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.sidebar .widget ul {
+  margin: 0;
+}
+
+.sidebar .widget h4 {
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.sidebar .widget-popular-posts li {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar .widget-popular-posts li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sidebar .widget-popular-posts .widget-thumb {
+  float: left;
+  margin-right: 8px;
+  /* border: 3px solid #eee; */
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.sidebar .widget-popular-posts .widget-thumb img {
+  width: 75px;
+  height: 75px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.sidebar .widget-popular-posts .widget-thumb:hover img {
+  opacity: 0.7;
+}
+
+.sidebar .widget-popular-posts .widget-content h5 {
+  font-size: 13px;
+  line-height: 19px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+/*------------------------------------------*/
+
+/*			 11 - Footer Styles
+/*------------------------------------------*/
+
+footer {
+  background-color: #222;
+  padding-top: 60px;
+  border-top: 4px solid #555;
+  color: #ccc;
+}
+
+footer p {
+  color: #ccc;
+}
+
+footer a {
+  color: #515151;
+}
+
+footer a:hover {
+  color: #515151;
+  text-decoration: underline;
+}
+
+.footer-widget {
+  margin-bottom: 45px;
+}
+
+.footer-widget h4 {
+  color: #eee;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+}
+
+.footer-widget h4 .head-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #333;
+  margin: 0;
+}
+
+.social-widget ul.social-icons li {
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.social-widget ul.social-icons li a i {
+  font-size: 1.4em;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  line-height: 36px;
+  text-align: center;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.social-widget ul.social-icons li a:hover {
+  text-decoration: none;
+}
+
+.social-widget ul.social-icons li a.facebook:hover i {
+  background-color: #507CBE;
+}
+
+.social-widget ul.social-icons li a.twitter:hover i {
+  background-color: #63CDF1;
+}
+
+.contact-widget {
+  /* background: url(../images/map.png) center bottom no-repeat; */
+}
+
+.contact-widget span {
+  font-weight: 700;
+}
+
+.contact-widget ul li {
+  margin-bottom: 12px;
+}
+
+.contact-widget p {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.copyright-section {
+  padding: 15px 0;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.copyright-section p {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+}
+
+.back-to-top i {
+  display: block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  text-align: center;
+  background-color: #444;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+/*------------------------------------------*/
+
+/*			 12 - Plugins Styles
+/*------------------------------------------*/
+
+/*
+ * Nivo Lightbox v1.0
+ * http://dev7studios.com/nivo-lightbox
+ *
+ * Copyright 2013, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Effects 
+ **********************************************/
+
+/* fadeScale */
+
+/* slideLeft / slideRight / slideUp / slideDown */
+
+/* fall */
+
+/*
+ * Nivo Lightbox Default Theme v1.0
+ * http://dev7studios.com/nivo-lightbox
+ */
+
+/* 
+ * 	Core Owl Carousel CSS
+ *	v1.24
+ */
+
+/* clearfix */
+
+/* display none until init */
+
+/* mouse grab icon */
+
+/* fix */
+
+/* CSS3 Transitions */
+
+/* fade */
+
+/* backSlide */
+
+/* goDown */
+
+/* scaleUp */
+
+/* Keyframes */
+
+/*empty*/
+
+/*
+* 	Owl Carousel Owl Theme 
+*/
+
+/* Styling Next and Prev buttons */
+
+/* Styling Pagination*/
+
+/* If PaginationNumbers is true */
+
+/* preloading images */
+
+/* progress bar */
+
+/* Counter */
+
+.navbar-collapse {
+  max-height: 340px;
+}
+
+@media (max-width: 1200px) {
+  .navbar-default .navbar-toggle,
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus {
+    background: #fff;
+    padding: 8px 5px 6px 5px;
+  }
+
+  .navbar-default .navbar-toggle i {
+    color: #bbb;
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-details {
+    display: none!important;
+  }
+
+  .navbar-brand {
+    padding: 25px 15px;
+  }
+
+  .navbar-default .navbar-nav {
+    margin: 0 !important;
+    top: 0;
+  }
+
+  .copyright-section {
+    text-align: center;
+  }
+
+  .page-banner {
+    text-align: center;
+  }
+
+  ul.breadcrumbs {
+    float: none;
+  }
+
+  ul.breadcrumbs li {
+    float: none;
+    display: inline-block;
+    float: left\0/;
+  }
+
+  .right-sidebar {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 1px solid #eee;
+  }
+
+  .sidebar .widget {
+    margin-bottom: 35px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .top-bar {
+    text-align: center;
+  }
+
+  .navbar-default .navbar-nav {
+    padding: 15px 0;
+  }
+
+  .navbar-default .navbar-toggle {
+    margin-top: 15px;
+    outline: none;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    border: none;
+    padding: 5px 10px;
+    display: block;
+    border: none !important;
+    padding-right: 0;
+  }
+
+  .navbar-default .navbar-nav > li > a:after {
+    display: none;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover {
+    opacity: 0.7;
+  }
+
+  .navbar-default .navbar-nav > li {
+    margin-left: 0;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-header {
+    position: relative;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    top: 0;
+  }
+
+  /* #menu is the original menu */
+}
+
+/* SlickMenu responsive */
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+a {
+  color: #0bb586;
+}
+
+.top-bar a:hover {
+  color: #0bb586;
+}
+
+.navbar-default .navbar-nav > li:hover > a,
+.navbar-default .navbar-nav > li > a.active {
+  color: #0bb586;
+}
+
+.navbar-default .navbar-nav > li > a:after {
+  background-color: #0bb586;
+}
+
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > li:hover > a {
+  border-color: #0bb586;
+}
+
+.latest-posts-classic .post-title a:hover {
+  color: #0bb586;
+}
+
+.classic-title span {
+  border-bottom-color: #0bb586;
+}
+
+.sidebar a:hover {
+  color: #0bb586;
+}
+
+.back-to-top:hover i {
+  background-color: #0bb586;
+}
+
+.dot1,
+.dot2 {
+  background-color: #0bb586;
+}
